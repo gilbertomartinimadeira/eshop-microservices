@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "tkq6xKwlNZc=",
+  "dgSpecHash": "3P+SUQciKmA=",
   "success": true,
   "projectFilePath": "/home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/Catalog.API.csproj",
   "expectedPackageFiles": [
+    "/home/gilberto/.nuget/packages/carter/10.0.0/carter.10.0.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/carter.analyzers/10.0.0/carter.analyzers.10.0.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/fluentvalidation/12.1.0/fluentvalidation.12.1.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/mapster/10.0.12/mapster.10.0.12.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/mapster.core/10.0.12/mapster.core.10.0.12.nupkg.sha512",
     "/home/gilberto/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
     "/home/gilberto/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/gilberto/.nuget/packages/microsoft.aspnetcore.openapi/10.0.11/microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/microsoft.codeanalysis.analyzers/3.11.0/microsoft.codeanalysis.analyzers.3.11.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/microsoft.codeanalysis.common/4.14.0/microsoft.codeanalysis.common.4.14.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/microsoft.codeanalysis.csharp/4.14.0/microsoft.codeanalysis.csharp.4.14.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/microsoft.extensions.dependencymodel/10.0.0/microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512",
     "/home/gilberto/.nuget/packages/microsoft.openapi/2.7.5/microsoft.openapi.2.7.5.nupkg.sha512"
   ],
   "logs": []

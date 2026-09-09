@@ -1,4 +1,5 @@
-using MediatR;
+using BuildingBlocks.CQRS;
+using Catalog.API.Models;
 
 namespace Catalog.API.Products.CreateProduct;
 
@@ -8,11 +9,11 @@ public record CreateProductCommand(
     string Description,
     string ImageFile,
     decimal Price
-) : IRequest<CreateProductResult>;
+) : ICommand<CreateProductResult>;
 
 public record CreateProductResult (Guid Id);
 
-internal class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     private readonly ILogger<CreateProductCommandHandler> _logger;
     public CreateProductCommandHandler(ILogger<CreateProductCommandHandler> logger)
@@ -20,9 +21,23 @@ internal class CreateProductCommandHandler : IRequestHandler<CreateProductComman
         _logger = logger;
     }
 
-    public Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
-        Console.WriteLine("Handling CreateProductCommand");
-        throw new NotImplementedException();
+        // create a product from the command
+        _logger.LogInformation("Creating a new product with name: {Name}", command.Name);
+        var product = new Product
+        {       
+            Id = Guid.NewGuid(), //simulating database-generated Id
+            Name = command.Name,
+            Category = command.Category,
+            Description = command.Description,
+            ImageFile = command.ImageFile,
+            Price = command.Price
+        };
+
+        //TODO: Implement saving to database
+
+        return Task.FromResult(new CreateProductResult(product.Id));
+        
     }
 }
