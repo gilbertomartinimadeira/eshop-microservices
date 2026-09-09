@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "tkq6xKwlNZc=",
+  "success": true,
+  "projectFilePath": "/home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/Catalog.API.csproj",
+  "expectedPackageFiles": [
+    "/home/gilberto/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/microsoft.aspnetcore.openapi/10.0.11/microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/microsoft.openapi/2.7.5/microsoft.openapi.2.7.5.nupkg.sha512"
+  ],
+  "logs": []
+}
