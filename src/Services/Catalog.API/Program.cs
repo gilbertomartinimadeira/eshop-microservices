@@ -1,4 +1,3 @@
-using Carter;
 using Catalog.API.Products.CreateProduct;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +11,7 @@ builder.Services.AddMediatR(configuration =>
 builder.Services.AddCarter(configurator: configurator =>
 {
     configurator.WithModule<CreateProductEndpoint>();
+
 });
 
 var app = builder.Build();
