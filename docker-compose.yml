@@ -1,0 +1,37 @@
+services:
+  catalogdb:
+    image: postgres
+    container_name: catalogdb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: CatalogDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - catalogdb-data:/var/lib/postgresql
+    networks:
+      - eshop
+
+  catalog-api:
+    build:
+      context: ./src
+      dockerfile: Services/Catalog.API/Dockerfile
+    environment:
+      ConnectionStrings__Database: Host=catalogdb;Database=CatalogDb;Username=postgres;Password=postgres
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: "http://+:8080"
+      ASPNETCORE_HTTP_PORTS: "8080"
+    depends_on:
+      - catalogdb
+    ports:
+      - "8080:8080"
+    networks:
+      - eshop
+
+volumes:
+  catalogdb-data:
+networks:
+  eshop:
+    driver: bridge

@@ -39,6 +39,49 @@
           }
         }
       },
+      "DistributedLock.Core/1.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/DistributedLock.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DistributedLock.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DistributedLock.Postgres/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "DistributedLock.Core": "[1.0.8, 1.1.0)",
+          "Npgsql": "8.0.6"
+        },
+        "compile": {
+          "lib/net8.0/DistributedLock.Postgres.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DistributedLock.Postgres.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FastExpressionCompiler/5.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/FastExpressionCompiler.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/FastExpressionCompiler.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FluentValidation/12.1.0": {
         "type": "package",
         "compile": {
@@ -48,6 +91,52 @@
         },
         "runtime": {
           "lib/net8.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ImTools/4.0.0": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "JasperFx/2.67.0": {
+        "type": "package",
+        "dependencies": {
+          "FastExpressionCompiler": "5.4.1",
+          "ImTools": "4.0.0",
+          "Microsoft.Bcl.TimeProvider": "10.0.0",
+          "Polly.Core": "8.6.5",
+          "Spectre.Console": "0.55.0"
+        },
+        "compile": {
+          "lib/net10.0/JasperFx.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/JasperFx.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "JasperFx.Events/2.67.0": {
+        "type": "package",
+        "dependencies": {
+          "JasperFx": "2.67.0"
+        },
+        "compile": {
+          "lib/net10.0/JasperFx.Events.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/JasperFx.Events.dll": {
             "related": ".xml"
           }
         }
@@ -71,6 +160,26 @@
         },
         "runtime": {
           "lib/netstandard2.0/Mapster.Core.dll": {}
+        }
+      },
+      "Marten/9.33.0": {
+        "type": "package",
+        "dependencies": {
+          "JasperFx": "2.67.0",
+          "JasperFx.Events": "2.67.0",
+          "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
+          "Weasel.Postgresql": "9.31.1",
+          "Weasel.Storage": "9.31.1"
+        },
+        "compile": {
+          "lib/net10.0/Marten.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Marten.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MediatR/12.2.0": {
@@ -122,6 +231,22 @@
         ],
         "build": {
           "build/Microsoft.AspNetCore.OpenApi.targets": {}
+        }
+      },
+      "Microsoft.Bcl.TimeProvider/10.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Bcl.TimeProvider.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Bcl.TimeProvider.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "Microsoft.CodeAnalysis.Analyzers/3.11.0": {
@@ -262,6 +387,19 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.OpenApi/2.7.5": {
         "type": "package",
         "compile": {
@@ -272,6 +410,161 @@
         "runtime": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "NetTopologySuite/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetTopologySuite.IO.PostGis/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "NetTopologySuite": "[2.0.0, 3.0.0-A)"
+        },
+        "compile": {
+          "lib/netstandard2.1/NetTopologySuite.IO.PostGis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetTopologySuite.IO.PostGis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Npgsql/9.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Npgsql.NetTopologySuite/9.0.4": {
+        "type": "package",
+        "dependencies": {
+          "NetTopologySuite": "2.5.0",
+          "NetTopologySuite.IO.PostGIS": "2.1.0",
+          "Npgsql": "9.0.4"
+        },
+        "compile": {
+          "lib/net6.0/Npgsql.NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Npgsql.NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Polly.Core/8.6.5": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Polly.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Polly.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Spectre.Console/0.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Spectre.Console.Ansi": "0.55.0"
+        },
+        "compile": {
+          "lib/net10.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Spectre.Console.Ansi/0.55.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Spectre.Console.Ansi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Spectre.Console.Ansi.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Weasel.Core/9.31.1": {
+        "type": "package",
+        "dependencies": {
+          "JasperFx": "2.46.0"
+        },
+        "compile": {
+          "lib/net10.0/Weasel.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Weasel.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Weasel.Postgresql/9.31.1": {
+        "type": "package",
+        "dependencies": {
+          "DistributedLock.Postgres": "1.3.0",
+          "JasperFx.Events": "2.46.0",
+          "Npgsql": "9.0.4",
+          "Npgsql.NetTopologySuite": "9.0.4",
+          "Weasel.Core": "9.31.1"
+        },
+        "compile": {
+          "lib/net10.0/Weasel.Postgresql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Weasel.Postgresql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Weasel.Storage/9.31.1": {
+        "type": "package",
+        "dependencies": {
+          "JasperFx.Events": "2.46.0",
+          "Weasel.Core": "9.31.1"
+        },
+        "compile": {
+          "lib/net10.0/Weasel.Storage.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Weasel.Storage.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -324,6 +617,73 @@
         "lib/netstandard2.0/Carter.Analyzers.pdb"
       ]
     },
+    "DistributedLock.Core/1.0.8": {
+      "sha512": "LAOsY8WxX8JU/n3lfXFz+f2pfnv0+4bHkCrOO3bwa28u9HrS3DlxSG6jf+u76SqesKs+KehZi0CndkfaUXBKvg==",
+      "type": "package",
+      "path": "distributedlock.core/1.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "distributedlock.core.1.0.8.nupkg.sha512",
+        "distributedlock.core.nuspec",
+        "lib/net462/DistributedLock.Core.dll",
+        "lib/net462/DistributedLock.Core.xml",
+        "lib/net8.0/DistributedLock.Core.dll",
+        "lib/net8.0/DistributedLock.Core.xml",
+        "lib/netstandard2.0/DistributedLock.Core.dll",
+        "lib/netstandard2.0/DistributedLock.Core.xml",
+        "lib/netstandard2.1/DistributedLock.Core.dll",
+        "lib/netstandard2.1/DistributedLock.Core.xml",
+        "package.readme.md"
+      ]
+    },
+    "DistributedLock.Postgres/1.3.0": {
+      "sha512": "CyjXmbhFgG30qPg4DwGnsmZO63y5DBRo+PI2xW0NwtFrsYsMVt/T1RcEUlb36JMKhDkf+euhnkanv/nU+W35qA==",
+      "type": "package",
+      "path": "distributedlock.postgres/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "distributedlock.postgres.1.3.0.nupkg.sha512",
+        "distributedlock.postgres.nuspec",
+        "lib/net462/DistributedLock.Postgres.dll",
+        "lib/net462/DistributedLock.Postgres.xml",
+        "lib/net8.0/DistributedLock.Postgres.dll",
+        "lib/net8.0/DistributedLock.Postgres.xml",
+        "lib/netstandard2.0/DistributedLock.Postgres.dll",
+        "lib/netstandard2.0/DistributedLock.Postgres.xml",
+        "lib/netstandard2.1/DistributedLock.Postgres.dll",
+        "lib/netstandard2.1/DistributedLock.Postgres.xml",
+        "package.readme.md"
+      ]
+    },
+    "FastExpressionCompiler/5.4.1": {
+      "sha512": "nqMykMspK5cQd35Y8ulQzAujxCcCwZVUne32pC5xNpXqrbPCuKOPMWkKHJ3LveAZPm6dsVvump0TJ1SZ9RzfTQ==",
+      "type": "package",
+      "path": "fastexpressioncompiler/5.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FastExpressionCompiler.snk",
+        "LICENSE/LICENSE",
+        "fastexpressioncompiler.5.4.1.nupkg.sha512",
+        "fastexpressioncompiler.nuspec",
+        "lib/net472/FastExpressionCompiler.dll",
+        "lib/net472/FastExpressionCompiler.xml",
+        "lib/net6.0/FastExpressionCompiler.dll",
+        "lib/net6.0/FastExpressionCompiler.xml",
+        "lib/net8.0/FastExpressionCompiler.dll",
+        "lib/net8.0/FastExpressionCompiler.xml",
+        "lib/net9.0/FastExpressionCompiler.dll",
+        "lib/net9.0/FastExpressionCompiler.xml",
+        "lib/netstandard2.0/FastExpressionCompiler.dll",
+        "lib/netstandard2.0/FastExpressionCompiler.xml",
+        "lib/netstandard2.1/FastExpressionCompiler.dll",
+        "lib/netstandard2.1/FastExpressionCompiler.xml",
+        "logo.png",
+        "readme.md"
+      ]
+    },
     "FluentValidation/12.1.0": {
       "sha512": "FqWEn8BdbbFEHGanj9K8SVo+LyBeFWy2rolaE+e1TNUbifr8M7Iss+I1AqTSc8kjKtvjl/WN4XIHiRpslh42bA==",
       "type": "package",
@@ -337,6 +697,56 @@
         "fluentvalidation.nuspec",
         "lib/net8.0/FluentValidation.dll",
         "lib/net8.0/FluentValidation.xml"
+      ]
+    },
+    "ImTools/4.0.0": {
+      "sha512": "dms0JfLKC9AQbQX/EdpRjn59EjEvaCxIgv1z9YxbEQb5SiOVoo7vlIKdEySeEwUkWhN05rZnNpUpG+aw5VqPVQ==",
+      "type": "package",
+      "path": "imtools/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ImTools.snk",
+        "LICENSE.txt",
+        "content/net45/ImTools/ImTools.cs",
+        "contentFiles/cs/net45/ImTools/ImTools.cs",
+        "contentFiles/cs/netstandard2.0/ImTools/ImTools.cs",
+        "imtools.4.0.0.nupkg.sha512",
+        "imtools.nuspec"
+      ]
+    },
+    "JasperFx/2.67.0": {
+      "sha512": "ddBBVCnOo2NiUIZ2wxRRZGIzhJf6bn+gM0ECkGNiqLCpoMoUX+G4FB8djw0necz1KF6dWSGp6Bkq0XNXFpFcTg==",
+      "type": "package",
+      "path": "jasperfx/2.67.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "jasperfx.2.67.0.nupkg.sha512",
+        "jasperfx.nuspec",
+        "lib/net10.0/JasperFx.dll",
+        "lib/net10.0/JasperFx.xml",
+        "lib/net9.0/JasperFx.dll",
+        "lib/net9.0/JasperFx.xml",
+        "logo.jpg"
+      ]
+    },
+    "JasperFx.Events/2.67.0": {
+      "sha512": "HuDQpOpTtU5nH61m7L7JgMSa604ROQVEcgRwItDpWkxD30yLN5GaIjGUj3MYirvaQDJxaJdzp9g7KAMa5VOd1Q==",
+      "type": "package",
+      "path": "jasperfx.events/2.67.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "jasperfx.events.2.67.0.nupkg.sha512",
+        "jasperfx.events.nuspec",
+        "lib/net10.0/JasperFx.Events.dll",
+        "lib/net10.0/JasperFx.Events.xml",
+        "lib/net9.0/JasperFx.Events.dll",
+        "lib/net9.0/JasperFx.Events.xml",
+        "logo.jpg"
       ]
     },
     "Mapster/10.0.12": {
@@ -366,6 +776,22 @@
         "lib/netstandard2.0/Mapster.Core.dll",
         "mapster.core.10.0.12.nupkg.sha512",
         "mapster.core.nuspec"
+      ]
+    },
+    "Marten/9.33.0": {
+      "sha512": "T5Nm3WaE0uT5HiZtR2KvYMZIEC+lQO7GM/VDNxntan7aUcFp4+mDPXq6ovMgzQeHuoEosAiaCwwH1Ie+pwIHVw==",
+      "type": "package",
+      "path": "marten/9.33.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/JasperFx.Events.SourceGenerator.dll",
+        "lib/net10.0/Marten.dll",
+        "lib/net10.0/Marten.xml",
+        "lib/net9.0/Marten.dll",
+        "lib/net9.0/Marten.xml",
+        "marten.9.33.0.nupkg.sha512",
+        "marten.nuspec"
       ]
     },
     "MediatR/12.2.0": {
@@ -414,6 +840,31 @@
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
         "microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.TimeProvider/10.0.0": {
+      "sha512": "bUubrBD6tRJE3V1kvRloYc6NymH3R5oFKjAS9e0ELNx6u0ZR+zjps9dDQyjgqN/rArzl7f+21KGszj3YRN7F2Q==",
+      "type": "package",
+      "path": "microsoft.bcl.timeprovider/10.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Bcl.TimeProvider.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Bcl.TimeProvider.targets",
+        "lib/net462/Microsoft.Bcl.TimeProvider.dll",
+        "lib/net462/Microsoft.Bcl.TimeProvider.xml",
+        "lib/net8.0/Microsoft.Bcl.TimeProvider.dll",
+        "lib/net8.0/Microsoft.Bcl.TimeProvider.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.TimeProvider.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.TimeProvider.xml",
+        "microsoft.bcl.timeprovider.10.0.0.nupkg.sha512",
+        "microsoft.bcl.timeprovider.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/3.11.0": {
@@ -1269,6 +1720,24 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+      "sha512": "s/s20YTVY9r9TPfTrN5g8zPF1YhwxyqO6PxUkrYTGI2B+OGPe9AdajWZrLhFqXIvqIW23fnUE4+ztrUWNU1+9g==",
+      "type": "package",
+      "path": "microsoft.io.recyclablememorystream/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll",
+        "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.xml",
+        "lib/netstandard2.0/Microsoft.IO.RecyclableMemoryStream.dll",
+        "lib/netstandard2.0/Microsoft.IO.RecyclableMemoryStream.xml",
+        "lib/netstandard2.1/Microsoft.IO.RecyclableMemoryStream.dll",
+        "lib/netstandard2.1/Microsoft.IO.RecyclableMemoryStream.xml",
+        "microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
+        "microsoft.io.recyclablememorystream.nuspec"
+      ]
+    },
     "Microsoft.OpenApi/2.7.5": {
       "sha512": "0FA67RSnRM4tcBKqiqVu/HPdZ9+QOKbmeRjxRUGTCjPU4C0bmUhd97Dso7Yild5P7nOV6GxJ2xrK0Kv/O9xp0w==",
       "type": "package",
@@ -1287,6 +1756,183 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "NetTopologySuite/2.5.0": {
+      "sha512": "5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
+      "type": "package",
+      "path": "nettopologysuite/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/NetTopologySuite.dll",
+        "lib/netstandard2.0/NetTopologySuite.xml",
+        "nettopologysuite.2.5.0.nupkg.sha512",
+        "nettopologysuite.nuspec"
+      ]
+    },
+    "NetTopologySuite.IO.PostGis/2.1.0": {
+      "sha512": "3W8XTFz8iP6GQ5jDXK1/LANHiU+988k1kmmuPWNKcJLpmSg6CvFpbTpz+s4+LBzkAp64wHGOldSlkSuzYfrIKA==",
+      "type": "package",
+      "path": "nettopologysuite.io.postgis/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NetTopologySuite.IO.PostGis.dll",
+        "lib/netstandard2.0/NetTopologySuite.IO.PostGis.xml",
+        "lib/netstandard2.1/NetTopologySuite.IO.PostGis.dll",
+        "lib/netstandard2.1/NetTopologySuite.IO.PostGis.xml",
+        "nettopologysuite.io.postgis.2.1.0.nupkg.sha512",
+        "nettopologysuite.io.postgis.nuspec"
+      ]
+    },
+    "Npgsql/9.0.4": {
+      "sha512": "68BASXH0FAEuL/J4J0eRfYC8/3vzqQTmoW8zDzNf0JgaVxc7LZeEkS6jaG0ib3voFLxY5ZiCwJG+uQM+mzuu0Q==",
+      "type": "package",
+      "path": "npgsql/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/Npgsql.dll",
+        "lib/net6.0/Npgsql.xml",
+        "lib/net8.0/Npgsql.dll",
+        "lib/net8.0/Npgsql.xml",
+        "npgsql.9.0.4.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Npgsql.NetTopologySuite/9.0.4": {
+      "sha512": "7AwBLPz8EPmgAXveZ55K0Tz/9bNb8j4VI4pkTOQjyHrce8wWfAA9pefm3REidy+Kt2UFiAWef34YVi7sb/kB4A==",
+      "type": "package",
+      "path": "npgsql.nettopologysuite/9.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/Npgsql.NetTopologySuite.dll",
+        "lib/net6.0/Npgsql.NetTopologySuite.xml",
+        "npgsql.nettopologysuite.9.0.4.nupkg.sha512",
+        "npgsql.nettopologysuite.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Polly.Core/8.6.5": {
+      "sha512": "t+sUVrIwvo7UmsgHGgOG9F0GDZSRIm47u2ylH17Gvcv1q5hNEwgD5GoBlFyc0kh/pebmPyrAgvGsR/65ZBaXlg==",
+      "type": "package",
+      "path": "polly.core/8.6.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net462/Polly.Core.dll",
+        "lib/net462/Polly.Core.pdb",
+        "lib/net462/Polly.Core.xml",
+        "lib/net472/Polly.Core.dll",
+        "lib/net472/Polly.Core.pdb",
+        "lib/net472/Polly.Core.xml",
+        "lib/net6.0/Polly.Core.dll",
+        "lib/net6.0/Polly.Core.pdb",
+        "lib/net6.0/Polly.Core.xml",
+        "lib/net8.0/Polly.Core.dll",
+        "lib/net8.0/Polly.Core.pdb",
+        "lib/net8.0/Polly.Core.xml",
+        "lib/netstandard2.0/Polly.Core.dll",
+        "lib/netstandard2.0/Polly.Core.pdb",
+        "lib/netstandard2.0/Polly.Core.xml",
+        "package-icon.png",
+        "package-readme.md",
+        "polly.core.8.6.5.nupkg.sha512",
+        "polly.core.nuspec"
+      ]
+    },
+    "Spectre.Console/0.55.0": {
+      "sha512": "2TVhUHFsDux0Z+y2Hv4bFsOMuON4SuotEEKkMparFkp5Rm259naaaEQrN4Sv6C1cbsiGKPjfkJDGgUp+hZPjTw==",
+      "type": "package",
+      "path": "spectre.console/0.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Spectre.Console.dll",
+        "lib/net10.0/Spectre.Console.xml",
+        "lib/net8.0/Spectre.Console.dll",
+        "lib/net8.0/Spectre.Console.xml",
+        "lib/net9.0/Spectre.Console.dll",
+        "lib/net9.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "logo.png",
+        "spectre.console.0.55.0.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    },
+    "Spectre.Console.Ansi/0.55.0": {
+      "sha512": "GIfgOvuF8MpU52bprhwtDEtx0gmVIGOepM8bw0lH/TSMD0rg1Xp+5Y53kPG8rFVdcpbNANlhDQ5mEVVPO3/2Tg==",
+      "type": "package",
+      "path": "spectre.console.ansi/0.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Spectre.Console.Ansi.dll",
+        "lib/net10.0/Spectre.Console.Ansi.xml",
+        "lib/net8.0/Spectre.Console.Ansi.dll",
+        "lib/net8.0/Spectre.Console.Ansi.xml",
+        "lib/net9.0/Spectre.Console.Ansi.dll",
+        "lib/net9.0/Spectre.Console.Ansi.xml",
+        "lib/netstandard2.0/Spectre.Console.Ansi.dll",
+        "lib/netstandard2.0/Spectre.Console.Ansi.xml",
+        "logo.png",
+        "spectre.console.ansi.0.55.0.nupkg.sha512",
+        "spectre.console.ansi.nuspec"
+      ]
+    },
+    "Weasel.Core/9.31.1": {
+      "sha512": "y5fH8+v+37Yol0ClRtPw0OlPUf9jgXwLj54g/8aAcvQxDA9aN2CNWKprk0lsCUchIV5FDe1DYwIcjk7wHyjlNA==",
+      "type": "package",
+      "path": "weasel.core/9.31.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net10.0/Weasel.Core.dll",
+        "lib/net10.0/Weasel.Core.xml",
+        "lib/net9.0/Weasel.Core.dll",
+        "lib/net9.0/Weasel.Core.xml",
+        "weasel.core.9.31.1.nupkg.sha512",
+        "weasel.core.nuspec"
+      ]
+    },
+    "Weasel.Postgresql/9.31.1": {
+      "sha512": "Ij+2rTroXak77kxZ5clxS+btVcxHjzHEyXpFG/IOTGRNolu0PsBXnM0DqPp4GtHkbDYVZzqVsyuKeWEmqPzqnw==",
+      "type": "package",
+      "path": "weasel.postgresql/9.31.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net10.0/Weasel.Postgresql.dll",
+        "lib/net10.0/Weasel.Postgresql.xml",
+        "lib/net9.0/Weasel.Postgresql.dll",
+        "lib/net9.0/Weasel.Postgresql.xml",
+        "weasel.postgresql.9.31.1.nupkg.sha512",
+        "weasel.postgresql.nuspec"
+      ]
+    },
+    "Weasel.Storage/9.31.1": {
+      "sha512": "DY7WmqLGccsgrddzDc1Dfb5itH4CaBzRWVXnYeN9RPzBubamgrG2ye/ogs8B/qxyBX1eGYq9lAC4Zf8Y3BBJCQ==",
+      "type": "package",
+      "path": "weasel.storage/9.31.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net10.0/Weasel.Storage.dll",
+        "lib/net10.0/Weasel.Storage.xml",
+        "lib/net9.0/Weasel.Storage.dll",
+        "lib/net9.0/Weasel.Storage.xml",
+        "weasel.storage.9.31.1.nupkg.sha512",
+        "weasel.storage.nuspec"
+      ]
+    },
     "BuildingBlocks/1.0.0": {
       "type": "project",
       "path": "../../BuildingBlocks/BuildingBlocks.csproj",
@@ -1296,6 +1942,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "BuildingBlocks >= 1.0.0",
+      "Marten >= 9.33.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.11"
     ]
   },
@@ -1347,6 +1994,10 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
+          "Marten": {
+            "target": "Package",
+            "version": "[9.33.0, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[10.0.11, )"

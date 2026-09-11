@@ -8,10 +8,11 @@ ENV ASPNETCORE_URLS=http://+:8080;https://+:8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Catalog.API/Catalog.API.csproj", "Catalog.API/"]
-RUN dotnet restore "Catalog.API/Catalog.API.csproj"
+COPY ["Services/Catalog.API/Catalog.API.csproj", "Services/Catalog.API/"]
+COPY ["BuildingBlocks/BuildingBlocks.csproj", "BuildingBlocks/"]
+RUN dotnet restore "Services/Catalog.API/Catalog.API.csproj"
 COPY . .
-WORKDIR "/src/Catalog.API"
+WORKDIR "/src/Services/Catalog.API"
 RUN dotnet build "Catalog.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

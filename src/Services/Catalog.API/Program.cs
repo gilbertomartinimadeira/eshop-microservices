@@ -14,6 +14,11 @@ builder.Services.AddCarter(configurator: configurator =>
 
 });
 
+builder.Services.AddMarten(options =>
+{
+    options.Connection(builder.Configuration.GetConnectionString("Database")!);    
+}).UseLightweightSessions();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
