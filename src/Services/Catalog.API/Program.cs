@@ -1,4 +1,6 @@
 using Catalog.API.Products.CreateProduct;
+using Catalog.API.Products.GetProductById;
+using Catalog.API.Products.GetProducts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +12,10 @@ builder.Services.AddMediatR(configuration =>
 
 builder.Services.AddCarter(configurator: configurator =>
 {
-    configurator.WithModule<CreateProductEndpoint>();
+    configurator.WithModules(typeof(CreateProductEndpoint))
+                .WithModules(typeof(GetProductsEndpoint))
+                .WithModules(typeof(GetProductByIdEndpoint))
+                ;
 
 });
 

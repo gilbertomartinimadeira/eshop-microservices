@@ -12,8 +12,8 @@ public class GetProductsQueryHandler (
     {
         _logger.LogInformation($"GetProductsQueryHandler.Handle called with query {query}", cancellationToken);
 
-        var products = await _documentSession.Query<Product>().ToListAsync(cancellationToken);
+        return new GetProductsResult(await _documentSession.Query<Product>().ToListAsync(cancellationToken));
 
-        throw new NotImplementedException();
+        
     }
 }
