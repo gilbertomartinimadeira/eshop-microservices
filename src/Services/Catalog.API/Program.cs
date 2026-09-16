@@ -1,6 +1,7 @@
-using Catalog.API.Products.CreateProduct;
 using Catalog.API.Products.GetProductById;
 using Catalog.API.Products.GetProducts;
+using Catalog.API.Products.GetProductsByCategory;
+using Catalog.API.Products.CreateProduct;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,14 +11,11 @@ builder.Services.AddOpenApi();
 builder.Services.AddMediatR(configuration =>
     configuration.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
-builder.Services.AddCarter(configurator: configurator =>
-{
-    configurator.WithModules(typeof(CreateProductEndpoint))
-                .WithModules(typeof(GetProductsEndpoint))
-                .WithModules(typeof(GetProductByIdEndpoint))
-                ;
-
-});
+builder.Services.AddCarter(
+     new DependencyContextAssemblyCatalog(
+        typeof(Program).Assembly, typeof(GetProductsEndpoint).Assembly
+     )
+);
 
 builder.Services.AddMarten(options =>
 {
