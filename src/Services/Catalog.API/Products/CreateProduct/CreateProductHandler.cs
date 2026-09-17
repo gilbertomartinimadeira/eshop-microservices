@@ -28,27 +28,19 @@ internal class CreateProductCommandHandler : ICommandHandler<CreateProductComman
 {
     private readonly ILogger<CreateProductCommandHandler> _logger;
     private readonly IDocumentSession _session;
-    private readonly IValidator<CreateProductCommand> _validator;
     public CreateProductCommandHandler(
         ILogger<CreateProductCommandHandler> logger,
-        IDocumentSession session, IValidator<CreateProductCommand> validator)
+        IDocumentSession session)
     {
         _logger = logger;
         _session = session;
-        _validator = validator;
     }
 
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
-    {
-        // validate the command
-        var validationResult = await _validator.ValidateAsync(command, cancellationToken);
-        if (!validationResult.IsValid)
-        {
-            throw new ValidationException(validationResult.Errors);
-        }
-
+    {    
         // create a product from the command
-        _logger.LogInformation("Creating a new product with name: {Name}", command.Name);
+        _logger.LogInformation("CreateProductCommandHandler.Handle called with: {@command}", command);
+        
         var product = new Product
         {               
             Name = command.Name,

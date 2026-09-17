@@ -3,14 +3,20 @@ using Catalog.API.Products.GetProducts;
 using Catalog.API.Products.GetProductsByCategory;
 using Catalog.API.Products.CreateProduct;
 using FluentValidation;
+using BuildingBlocks.Behaviors;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-builder.Services.AddMediatR(configuration =>
-    configuration.RegisterServicesFromAssembly(typeof(Program).Assembly));
+builder.Services.AddMediatR(configuration => {
+    configuration.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    configuration.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+});
+
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+
 
 builder.Services.AddCarter(
      new DependencyContextAssemblyCatalog(
