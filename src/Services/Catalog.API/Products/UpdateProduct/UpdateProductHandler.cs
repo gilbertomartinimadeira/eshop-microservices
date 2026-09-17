@@ -1,3 +1,5 @@
+using FluentValidation;
+
 namespace Catalog.API.Products.UpdateProduct;
 
 public record UpdateProductCommand(
@@ -10,6 +12,19 @@ public record UpdateProductCommand(
 ) : ICommand<UpdateProductResult>;
 
 public record UpdateProductResult(bool IsSuccess);
+
+public class UpdateProductCommandValidator : AbstractValidator<UpdateProductCommand>
+{
+    public UpdateProductCommandValidator()
+    {
+        RuleFor(x => x.Id).NotEmpty();
+        RuleFor(x => x.Name).NotEmpty().MaximumLength(200);
+        RuleFor(x => x.Description).NotEmpty().MaximumLength(1000);
+        RuleFor(x => x.ImageFile).NotEmpty().MaximumLength(200);
+        RuleFor(x => x.Price).GreaterThan(0);
+        RuleFor(x => x.Category).NotEmpty();
+    }
+}
 
 public class UpdateProductCommandHandler (IDocumentSession documentSession, ILogger<UpdateProductCommandHandler> logger): ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {
