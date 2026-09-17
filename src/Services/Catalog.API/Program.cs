@@ -4,6 +4,8 @@ using Catalog.API.Products.GetProductsByCategory;
 using Catalog.API.Products.CreateProduct;
 using FluentValidation;
 using BuildingBlocks.Behaviors;
+using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,11 +35,38 @@ builder.Services.AddMarten(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.UseExceptionHandler(exceptionHandlerApp =>
+{
+    exceptionHandlerApp.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+
+        // using static System.Net.Mime.MediaTypeNames;
+        context.Response.ContentType = Text.Plain;
+
+        await context.Response.WriteAsync("An exception was thrown.");
+
+        var exceptionHandlerPathFeature =
+            context.Features.Get<IExceptionHandlerPathFeature>();
+
+        if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
+        {
+            await context.Response.WriteAsync(" The file was not found.");
+        }
+
+        if (exceptionHandlerPathFeature?.Path == "/")
+        {
+            await context.Response.WriteAsync(" Page: Home.");
+        }
+    });
+});
+app.UseHsts();
 
 app.MapCarter();
 
