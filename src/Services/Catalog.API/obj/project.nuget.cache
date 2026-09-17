@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RxjKzem1iik=",
+  "dgSpecHash": "SJvBtpiFWpo=",
   "success": true,
   "projectFilePath": "/home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/Catalog.API.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,8 @@
     "/home/gilberto/.nuget/packages/distributedlock.core/1.0.8/distributedlock.core.1.0.8.nupkg.sha512",
     "/home/gilberto/.nuget/packages/distributedlock.postgres/1.3.0/distributedlock.postgres.1.3.0.nupkg.sha512",
     "/home/gilberto/.nuget/packages/fastexpressioncompiler/5.4.1/fastexpressioncompiler.5.4.1.nupkg.sha512",
-    "/home/gilberto/.nuget/packages/fluentvalidation/12.1.0/fluentvalidation.12.1.0.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
+    "/home/gilberto/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.1.1/fluentvalidation.dependencyinjectionextensions.12.1.1.nupkg.sha512",
     "/home/gilberto/.nuget/packages/imtools/4.0.0/imtools.4.0.0.nupkg.sha512",
     "/home/gilberto/.nuget/packages/jasperfx/2.67.0/jasperfx.2.67.0.nupkg.sha512",
     "/home/gilberto/.nuget/packages/jasperfx.events/2.67.0/jasperfx.events.2.67.0.nupkg.sha512",

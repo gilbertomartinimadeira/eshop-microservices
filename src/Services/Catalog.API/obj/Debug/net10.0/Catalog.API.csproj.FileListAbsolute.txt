@@ -121,3 +121,4 @@
 /home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/bin/Debug/net10.0/Weasel.Core.dll
 /home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/bin/Debug/net10.0/Weasel.Postgresql.dll
 /home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/bin/Debug/net10.0/Weasel.Storage.dll
+/home/gilberto/dev/csharp/eshop-microservices/src/Services/Catalog.API/bin/Debug/net10.0/FluentValidation.DependencyInjectionExtensions.dll

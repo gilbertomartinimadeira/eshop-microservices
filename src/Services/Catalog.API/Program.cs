@@ -2,6 +2,7 @@ using Catalog.API.Products.GetProductById;
 using Catalog.API.Products.GetProducts;
 using Catalog.API.Products.GetProductsByCategory;
 using Catalog.API.Products.CreateProduct;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddCarter(
         typeof(Program).Assembly, typeof(GetProductsEndpoint).Assembly
      )
 );
+
+builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
 builder.Services.AddMarten(options =>
 {
