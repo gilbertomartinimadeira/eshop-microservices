@@ -37,7 +37,7 @@ public class UpdateProductCommandHandler (IDocumentSession documentSession, ILog
         if (product == null)
         {
             logger.LogWarning("Product with ID {ProductId} not found", command.Id);
-            return await Task.FromResult(new UpdateProductResult(false));
+            throw new ProductNotFoundException(command.Id);
         }
 
         product.Name = command.Name;
