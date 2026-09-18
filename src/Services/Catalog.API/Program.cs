@@ -5,6 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 using Microsoft.AspNetCore.Diagnostics;
 using BuildingBlocks.Exceptions.Handlers;
 using Microsoft.Extensions.Options;
+using Catalog.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,12 @@ builder.Services.AddMarten(options =>
     options.Connection(builder.Configuration.GetConnectionString("Database")!);    
 }).UseLightweightSessions();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.InitializeMartenWith<CatalogInitialData>();
+}
+
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 var app = builder.Build();
@@ -40,6 +47,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+
     app.MapOpenApi();
 }
 
