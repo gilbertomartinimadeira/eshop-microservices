@@ -42,6 +42,8 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 
@@ -57,6 +59,8 @@ app.UseHsts();
 app.MapCarter();
 
 app.UseExceptionHandler( _ => {});
+
+app.UseHealthChecks("/health");
 
 //app.UseHttpsRedirection();
 
