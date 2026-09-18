@@ -1,10 +1,7 @@
 using Catalog.API.Products.GetProducts;
 using FluentValidation;
 using BuildingBlocks.Behaviors;
-using static System.Net.Mime.MediaTypeNames;
-using Microsoft.AspNetCore.Diagnostics;
 using BuildingBlocks.Exceptions.Handlers;
-using Microsoft.Extensions.Options;
 using Catalog.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,7 +39,8 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
-builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecks()
+                .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
 
 var app = builder.Build();
 
