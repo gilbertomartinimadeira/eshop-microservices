@@ -4,11 +4,10 @@ public record DeleteProductCommand(Guid Id) : ICommand<DeleteProductResult>;
 
 public record DeleteProductResult(bool IsSuccess);
 
-public class DeleteProductHandler(IDocumentSession documentSession, ILogger<DeleteProductHandler> logger) : ICommandHandler<DeleteProductCommand, DeleteProductResult>
+public class DeleteProductHandler(IDocumentSession documentSession) : ICommandHandler<DeleteProductCommand, DeleteProductResult>
 {
     public async Task<DeleteProductResult> Handle(DeleteProductCommand command, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Handling DeleteProductCommand for Id: {Id}", command.Id);
         var product = await documentSession.LoadAsync<Product>(command.Id, cancellationToken);
         if (product is null)
         {
